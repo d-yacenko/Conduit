@@ -1,0 +1,5 @@
+# cache for current jar dependency. DO NOT EDIT.
+# format is <lastModified> <length> <SHA-1> <path>
+# Encoding is UTF-8
+1426772611000 1074044 33b27a8d2a5b87e6eb6c60e87a5374ffbfeacc3a /opt/java/appcompat_v7/libs/android-support-v4.jar
+1431691748000 1157388 605c447c20ca216b5556af9f215af5d4bba1b117 /opt/java/Conduit/libs/android-support-v4.jar

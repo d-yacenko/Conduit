@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/sendSms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_message_draw_black_36dp" />
+      
+        <ImageButton
+            android:id="@+id/sendEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_email_black_36dp" />
+        
+        <TextView
+            android:id="@+id/group"
+            android:layout_width="fill_parent"
+            android:layout_height="42dp"
+            android:layout_margin="5dp"
+            android:background="#DDDDDD"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="italic|bold" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit" />
+    
+    <ListView
+        android:id="@+id/list_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+
+</LinearLayout>
