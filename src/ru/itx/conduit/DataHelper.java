@@ -443,8 +443,8 @@ public class DataHelper {
 	public List<GroupList> replicaGroupList() {
 		List<GroupList> list=new ArrayList<GroupList>();
 		Cursor cursor = db.query(DBTables.T3_TABLE_NAME, new String[] {
-				DBTables.T3_COLUMN_ID, DBTables.T3_COLUMN_STUDENT_ID,
-				DBTables.T3_COLUMN_TEACH_GROUP_ID },
+				DBTables.T3_COLUMN_ID, DBTables.T3_COLUMN_TEACH_GROUP_ID,
+				DBTables.T3_COLUMN_STUDENT_ID },
 				null, null, null, null, null);
 		if (cursor.moveToFirst())
 			do {
@@ -608,8 +608,9 @@ public class DataHelper {
 	}
 	// Delete========================================================
 	public int delete(AccountModel account) {
+		int rez=0;
 		for (RowAccountRecordModel r : account.list)
-			db.delete(
+			rez+=db.delete(
 					DBTables.T4_TABLE_NAME,
 					DBTables.T4_COLUMN_SUBJECT + "=? and "
 							+ DBTables.T4_COLUMN_DATE + "=? and "
@@ -617,26 +618,26 @@ public class DataHelper {
 					new String[] { code(account.subject),
 							String.valueOf(account.date),
 							String.valueOf(r.getStudent().get_id()) });
-		return 0;
+		return rez;
 	}
 
 	// Update========================================================
 	public int editAccountRecords(long old_ldate, String old_subj, long ldate,
 			String subj, List<RowAccountRecordModel> list) {
-
+		int rez=0;
 		for (RowAccountRecordModel r : list) {
 			cv = new ContentValues();
 			bind(DBTables.T4_COLUMN_SUBJECT, subj);
 			bind(DBTables.T4_COLUMN_DATE, ldate);
 			bind(DBTables.T4_COLUMN_VALUE, r.getValue());
-			db.update(DBTables.T4_TABLE_NAME, cv, DBTables.T4_COLUMN_SUBJECT
+			rez+=db.update(DBTables.T4_TABLE_NAME, cv, DBTables.T4_COLUMN_SUBJECT
 					+ "= ? and " + DBTables.T4_COLUMN_DATE + "= ? and "
 					+ DBTables.T4_COLUMN_STUDENT_ID + "=? ",
 					new String[] { code(old_subj), String.valueOf(old_ldate),
 							String.valueOf(r.getStudent().get_id()) });
 		}
 
-		return 0;
+		return rez;
 	}
 
 	// ==============================================================
