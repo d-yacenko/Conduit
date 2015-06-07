@@ -659,7 +659,7 @@ public class DataHelper {
 						new String[] { code(old_subj),
 								String.valueOf(old_ldate),
 								String.valueOf(r.getStudent().get_id()) });
-			} else {
+			} else { 
 				cv = new ContentValues();
 				bind(DBTables.T4_COLUMN_SUBJECT, subj);
 				bind(DBTables.T4_COLUMN_DATE, ldate);
