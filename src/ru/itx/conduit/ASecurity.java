@@ -129,7 +129,7 @@ public class ASecurity {
 		} catch (Exception e) {
 			Log.v(TAG,e.getMessage());
 		}
-		return Base64.encodeToString(enc, Base64.DEFAULT);
+		return Base64.encodeToString(enc, Base64.DEFAULT).trim();
 	}
 	
 	public static byte[] _code(SecretKey SK,byte[] str){
@@ -154,7 +154,7 @@ public class ASecurity {
 		} catch (Exception e) {
 			Log.v(TAG,e.getMessage());
 		}
-		return new String(dec);
+		return new String(dec).trim();
 	}
 	
 	public static byte [] _decode(SecretKey SK,byte [] str){

@@ -1,7 +1,7 @@
 package ru.itx.conduit;
 
 public class DBTables {
-	public static final int DB_VERSION = 25;
+	public static final int DB_VERSION = 26;
 
 	public static final String T0_TABLE_NAME = "asecurity";
 	public static final String T0_COLUMN_ID = "_id";
