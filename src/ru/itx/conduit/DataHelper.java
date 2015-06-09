@@ -645,11 +645,11 @@ public class DataHelper {
 			String subj, List<RowAccountRecordModel> list) {
 		int rez = 0;
 		for (RowAccountRecordModel r : list) {
+			cv = new ContentValues();
+			bind(DBTables.T4_COLUMN_SUBJECT, subj);
+			bind(DBTables.T4_COLUMN_DATE, ldate);
+			bind(DBTables.T4_COLUMN_VALUE, r.getValue());
 			if (old_subj != null) {
-				cv = new ContentValues();
-				bind(DBTables.T4_COLUMN_SUBJECT, subj);
-				bind(DBTables.T4_COLUMN_DATE, ldate);
-				bind(DBTables.T4_COLUMN_VALUE, r.getValue());
 				rez += db.update(
 						DBTables.T4_TABLE_NAME,
 						cv,
@@ -660,10 +660,6 @@ public class DataHelper {
 								String.valueOf(old_ldate),
 								String.valueOf(r.getStudent().get_id()) });
 			} else { 
-				cv = new ContentValues();
-				bind(DBTables.T4_COLUMN_SUBJECT, subj);
-				bind(DBTables.T4_COLUMN_DATE, ldate);
-				bind(DBTables.T4_COLUMN_VALUE, r.getValue());
 				rez += db.update(
 						DBTables.T4_TABLE_NAME,
 						cv,

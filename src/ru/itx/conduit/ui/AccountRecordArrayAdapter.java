@@ -40,46 +40,45 @@ public class AccountRecordArrayAdapter extends
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View view=convertView;
+		View view = convertView;
 		RowAccountRecordModel model = list.get(position);
 		if (view == null) {
 			LayoutInflater inflator = context.getLayoutInflater();
 			view = inflator.inflate(R.layout.row_account_record, null);
-		}
 			((EditText) view.findViewById(R.id.rate))
 					.addTextChangedListener(new RateTextWatcher(position));
-			String name = model.getStudent().getName() + " "
-					+ (model.getStudent().getLastName()==null?"":model.getStudent().getLastName()) + " "
-					+ model.getStudent().getSurName();
-			((TextView) view.findViewById(R.id.student)).setText(name);
-			String s=model.getValue();
-			if(!s.equals(view.getResources().getString(R.string._q))
-					&& !s.equals(view.getResources().getString(R.string._h))
-					&& !s.equals(view.getResources().getString(R.string._n))
-					&& !s.equals(""))
-				((EditText) view.findViewById(R.id.rate)).setText(s);
-			else ((EditText) view.findViewById(R.id.rate)).setText("");
-			if(s.equals(view.getResources().getString(R.string._n)))
-				((RadioButton) view.findViewById(R.id.radio_n)).setChecked(true);
-			if(s.equals(view.getResources().getString(R.string._h)))
-				((RadioButton) view.findViewById(R.id.radio_h)).setChecked(true);
-			if(s.equals(view.getResources().getString(R.string._q)))
-				((RadioButton) view.findViewById(R.id.radio_q)).setChecked(true);
-			
 			((RadioButton) view.findViewById(R.id.radio_n))
-					.setOnClickListener(
-							new RateOnClickListener(position, view
-									.getResources().getString(R.string._n)));
+					.setOnClickListener(new RateOnClickListener(position, view
+							.getResources().getString(R.string._n)));
 			((RadioButton) view.findViewById(R.id.radio_h))
-					.setOnClickListener(
-							new RateOnClickListener(position, view
-									.getResources().getString(R.string._h)));
+					.setOnClickListener(new RateOnClickListener(position, view
+							.getResources().getString(R.string._h)));
 			((RadioButton) view.findViewById(R.id.radio_q))
-					.setOnClickListener(
-							new RateOnClickListener(position, view
-									.getResources().getString(R.string._q)));
+					.setOnClickListener(new RateOnClickListener(position, view
+							.getResources().getString(R.string._q)));
+		}
+		String name = model.getStudent().getName()
+				+ " "
+				+ (model.getStudent().getLastName() == null ? "" : model
+						.getStudent().getLastName()) + " "
+				+ model.getStudent().getSurName();
+		((TextView) view.findViewById(R.id.student)).setText(name);
+		String s = model.getValue();
+		if (!s.equals(view.getResources().getString(R.string._q))
+				&& !s.equals(view.getResources().getString(R.string._h))
+				&& !s.equals(view.getResources().getString(R.string._n))
+				&& !s.equals(""))
+			((EditText) view.findViewById(R.id.rate)).setText(s);
+		else
+			((EditText) view.findViewById(R.id.rate)).setText("");
+		if (s.equals(view.getResources().getString(R.string._n)))
+			((RadioButton) view.findViewById(R.id.radio_n)).setChecked(true);
+		if (s.equals(view.getResources().getString(R.string._h)))
+			((RadioButton) view.findViewById(R.id.radio_h)).setChecked(true);
+		if (s.equals(view.getResources().getString(R.string._q)))
+			((RadioButton) view.findViewById(R.id.radio_q)).setChecked(true);
 
-			// ((TextView) convertView.findViewById(R.id.student)).setTag(rh);
+		// ((TextView) convertView.findViewById(R.id.student)).setTag(rh);
 		return view;
 	}
 
@@ -89,7 +88,7 @@ public class AccountRecordArrayAdapter extends
 
 		RateOnClickListener(int position, String sign) {
 			this.position = position;
-			this.sign=sign;
+			this.sign = sign;
 		}
 
 		@Override
