@@ -31,6 +31,11 @@ public class AccountRecordArrayAdapter extends
 		return list;
 	}
 
+	@Override
+	public int getViewTypeCount() {
+		return 1;
+	}
+
 	public AccountRecordArrayAdapter(Activity context,
 			List<RowAccountRecordModel> list) {
 		super(context, R.layout.row_account_record, list);
@@ -45,17 +50,6 @@ public class AccountRecordArrayAdapter extends
 		if (view == null) {
 			LayoutInflater inflator = context.getLayoutInflater();
 			view = inflator.inflate(R.layout.row_account_record, null);
-			((EditText) view.findViewById(R.id.rate))
-					.addTextChangedListener(new RateTextWatcher(position));
-			((RadioButton) view.findViewById(R.id.radio_n))
-					.setOnClickListener(new RateOnClickListener(position, view
-							.getResources().getString(R.string._n)));
-			((RadioButton) view.findViewById(R.id.radio_h))
-					.setOnClickListener(new RateOnClickListener(position, view
-							.getResources().getString(R.string._h)));
-			((RadioButton) view.findViewById(R.id.radio_q))
-					.setOnClickListener(new RateOnClickListener(position, view
-							.getResources().getString(R.string._q)));
 		}
 		String name = model.getStudent().getName()
 				+ " "
@@ -77,8 +71,17 @@ public class AccountRecordArrayAdapter extends
 			((RadioButton) view.findViewById(R.id.radio_h)).setChecked(true);
 		if (s.equals(view.getResources().getString(R.string._q)))
 			((RadioButton) view.findViewById(R.id.radio_q)).setChecked(true);
-
-		// ((TextView) convertView.findViewById(R.id.student)).setTag(rh);
+		((EditText) view.findViewById(R.id.rate))
+				.addTextChangedListener(new RateTextWatcher(position));
+		((RadioButton) view.findViewById(R.id.radio_n))
+				.setOnClickListener(new RateOnClickListener(position, view
+						.getResources().getString(R.string._n)));
+		((RadioButton) view.findViewById(R.id.radio_h))
+				.setOnClickListener(new RateOnClickListener(position, view
+						.getResources().getString(R.string._h)));
+		((RadioButton) view.findViewById(R.id.radio_q))
+				.setOnClickListener(new RateOnClickListener(position, view
+						.getResources().getString(R.string._q)));
 		return view;
 	}
 
