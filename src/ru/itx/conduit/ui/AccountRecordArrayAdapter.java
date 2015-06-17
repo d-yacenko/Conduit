@@ -67,8 +67,8 @@ public class AccountRecordArrayAdapter extends
 				@Override
 				public void onFocusChange(View v, boolean hasFocus) {
 					String s=((EditText)v).getText().toString();
-					if (String.valueOf(s).length() == 0)
-						return;
+					//if (String.valueOf(s).length() == 0)
+					//	return;
 					Integer position=(Integer)((View)v.getParent()).getTag();
 					list.get(position).setValue(s);
 				}
