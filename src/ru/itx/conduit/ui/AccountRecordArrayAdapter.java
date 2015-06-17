@@ -14,6 +14,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
@@ -50,7 +51,30 @@ public class AccountRecordArrayAdapter extends
 		if (view == null) {
 			LayoutInflater inflator = context.getLayoutInflater();
 			view = inflator.inflate(R.layout.row_account_record, null);
+			((RadioButton) view.findViewById(R.id.radio_n))
+					.setOnClickListener(new RateOnClickListener(view
+							.getResources().getString(R.string._n)));
+			((RadioButton) view.findViewById(R.id.radio_h))
+					.setOnClickListener(new RateOnClickListener(view
+							.getResources().getString(R.string._h)));
+			((RadioButton) view.findViewById(R.id.radio_q))
+					.setOnClickListener(new RateOnClickListener(view
+							.getResources().getString(R.string._q)));
+			//((EditText) view.findViewById(R.id.rate))
+			//		.addTextChangedListener(new RateTextWatcher(position));
+			((EditText) view.findViewById(R.id.rate)).setOnFocusChangeListener(new OnFocusChangeListener() {
+				
+				@Override
+				public void onFocusChange(View v, boolean hasFocus) {
+					String s=((EditText)v).getText().toString();
+					if (String.valueOf(s).length() == 0)
+						return;
+					Integer position=(Integer)((View)v.getParent()).getTag();
+					list.get(position).setValue(s);
+				}
+			});
 		}
+		view.setTag(Integer.valueOf(position));
 		String name = model.getStudent().getName()
 				+ " "
 				+ (model.getStudent().getLastName() == null ? "" : model
@@ -71,32 +95,21 @@ public class AccountRecordArrayAdapter extends
 			((RadioButton) view.findViewById(R.id.radio_h)).setChecked(true);
 		if (s.equals(view.getResources().getString(R.string._q)))
 			((RadioButton) view.findViewById(R.id.radio_q)).setChecked(true);
-		((EditText) view.findViewById(R.id.rate))
-				.addTextChangedListener(new RateTextWatcher(position));
-		((RadioButton) view.findViewById(R.id.radio_n))
-				.setOnClickListener(new RateOnClickListener(position, view
-						.getResources().getString(R.string._n)));
-		((RadioButton) view.findViewById(R.id.radio_h))
-				.setOnClickListener(new RateOnClickListener(position, view
-						.getResources().getString(R.string._h)));
-		((RadioButton) view.findViewById(R.id.radio_q))
-				.setOnClickListener(new RateOnClickListener(position, view
-						.getResources().getString(R.string._q)));
 		return view;
 	}
 
 	class RateOnClickListener implements OnClickListener {
-		private int position;
-		String sign;
-
-		RateOnClickListener(int position, String sign) {
-			this.position = position;
-			this.sign = sign;
+		private String sign;
+		
+		RateOnClickListener(String sign) {
+			super();
+			this.sign=sign;
 		}
 
 		@Override
 		public void onClick(View v) {
-			String s = list.get(position).getValue();
+			Integer position=(Integer)((View)v.getParent().getParent()).getTag();
+			String s=list.get(position).getValue();
 			if (s.equals(v.getResources().getString(R.string._n))
 					|| s.equals(v.getResources().getString(R.string._h))
 					|| s.equals(v.getResources().getString(R.string._q))
@@ -105,33 +118,5 @@ public class AccountRecordArrayAdapter extends
 				// ((RadioButton)v.getTag()).setChecked(true);
 			}
 		}
-	}
-
-	class RateTextWatcher implements TextWatcher {
-		private int position;
-
-		public RateTextWatcher(int position) {
-			this.position = position;
-		}
-
-		@Override
-		public void onTextChanged(CharSequence s, int start, int before,
-				int count) {
-		}
-
-		@Override
-		public void beforeTextChanged(CharSequence s, int start, int count,
-				int after) {
-		}
-
-		@Override
-		public void afterTextChanged(Editable s) {
-			if (String.valueOf(s).length() == 0)
-				return;
-			list.get(position).setValue(String.valueOf(s));
-			// Toast.makeText(context,"Check!"+position,
-			// Toast.LENGTH_SHORT).show();
-		}
-
 	}
 }
