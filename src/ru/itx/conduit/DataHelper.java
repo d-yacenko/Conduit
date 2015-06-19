@@ -6,9 +6,11 @@ import java.util.List;
 
 import javax.crypto.SecretKey;
 
+import ru.itx.conduit.exceptions.DBConstraintStudentFieldException;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.database.sqlite.SQLiteStatement;
@@ -263,7 +265,14 @@ public class DataHelper {
 		bind(8, s.getNumClass());
 		bind(9, s.isHidden());
 		bind(10, s.getPhoto());
-		return stmt.executeInsert();
+		int rez=-1;
+		try {
+			stmt.executeInsert();
+		} catch(SQLiteConstraintException e){
+			throw new DBConstraintStudentFieldException();
+		}
+
+		return rez;
 	}
 
 	public void replicaStudent(List<Student> list) {
