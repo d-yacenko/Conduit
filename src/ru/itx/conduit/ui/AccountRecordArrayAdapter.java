@@ -31,11 +31,15 @@ public class AccountRecordArrayAdapter extends
 	public List<RowAccountRecordModel> getList() {
 		return list;
 	}
-
 	@Override
-	public int getViewTypeCount() {
-		return 1;
-	}
+    public int getItemViewType(int position) {
+        return position;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 500;
+    }
 
 	public AccountRecordArrayAdapter(Activity context,
 			List<RowAccountRecordModel> list) {
@@ -71,10 +75,12 @@ public class AccountRecordArrayAdapter extends
 					//	return;
 					Integer position=(Integer)((View)v.getParent()).getTag();
 					list.get(position).setValue(s);
+					//notifyDataSetChanged();
 				}
 			});
 		}
 		view.setTag(Integer.valueOf(position));
+		
 		String name = model.getStudent().getName()
 				+ " "
 				+ (model.getStudent().getLastName() == null ? "" : model
@@ -95,6 +101,7 @@ public class AccountRecordArrayAdapter extends
 			((RadioButton) view.findViewById(R.id.radio_h)).setChecked(true);
 		if (s.equals(view.getResources().getString(R.string._q)))
 			((RadioButton) view.findViewById(R.id.radio_q)).setChecked(true);
+		((RadioButton) view.findViewById(R.id.radio_q)).invalidate();
 		return view;
 	}
 
@@ -115,6 +122,7 @@ public class AccountRecordArrayAdapter extends
 					|| s.equals(v.getResources().getString(R.string._q))
 					|| s.equals("")) {
 				list.get(position).setValue(sign);
+				//notifyDataSetChanged();
 				// ((RadioButton)v.getTag()).setChecked(true);
 			}
 		}

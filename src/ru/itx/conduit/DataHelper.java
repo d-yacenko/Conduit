@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.crypto.SecretKey;
 
-import ru.itx.conduit.exceptions.DBConstraintStudentFieldException;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -269,7 +268,7 @@ public class DataHelper {
 		try {
 			stmt.executeInsert();
 		} catch(SQLiteConstraintException e){
-			throw new DBConstraintStudentFieldException();
+			//throw new DBConstraintStudentFieldException();
 		}
 
 		return rez;
