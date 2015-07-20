@@ -7,6 +7,7 @@ import java.util.List;
 import javax.crypto.SecretKey;
 
 import ru.itx.conduit.exceptions.DBConstraintStudentFieldException;
+import ru.itx.conduit.ui.MainActivity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -253,7 +254,7 @@ public class DataHelper {
 	}
 
 	// Insert========================================================
-	public long insert(Student s) {
+	public long insert(Student s) throws DBConstraintStudentFieldException {
 		stmt = db.compileStatement(INSERT_T1);
 		bind(1, s.getName());
 		bind(2, s.getLastName());
@@ -269,7 +270,7 @@ public class DataHelper {
 		try {
 			stmt.executeInsert();
 		} catch(SQLiteConstraintException e){
-			throw new DBConstraintStudentFieldException();
+			throw new DBConstraintStudentFieldException(MainActivity.CONTEXT);
 		}
 
 		return rez;

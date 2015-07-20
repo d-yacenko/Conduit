@@ -12,6 +12,7 @@ import ru.itx.conduit.R;
 import ru.itx.conduit.Student;
 import ru.itx.conduit.R.id;
 import ru.itx.conduit.R.layout;
+import ru.itx.conduit.exceptions.DBConstraintStudentFieldException;
 import ru.itx.conduit.ui.FragmentTools;
 import ru.itx.conduit.ui.MainActivity;
 import android.R.string;
@@ -91,7 +92,11 @@ public class AddStudentFragment extends FragmentTools {
 				}
 				Student student = new Student(name, lastname, surname, email,
 						phone, parentphone, myDate, numclass, hidden, byteArray);
-				DataHelper.getDH().insert(student);
+				try {
+					DataHelper.getDH().insert(student);
+				} catch (DBConstraintStudentFieldException e) {
+					say(e.getLocalizedMessage());
+				}
 				// ===
 				go2Fragment(((MainActivity) getActivity()).studentFragment);
 			}

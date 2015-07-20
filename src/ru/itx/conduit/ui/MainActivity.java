@@ -41,6 +41,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -73,6 +74,7 @@ public class MainActivity extends Activity {
 	private ASecurity security;
 	private DataHelper dh;
 
+	public static Context CONTEXT;
 	public static final String TAG = "EXCEPTION";
 
 	public DataHelper getDH() {
@@ -82,6 +84,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if(CONTEXT==null) CONTEXT=this;
 		setContentView(R.layout.activity_main);
 		if (savedInstanceState == null) {
 			dh = getDataHelper();

@@ -30,7 +30,7 @@ public class FragmentTools extends Fragment {
 	public static final int COLUMN_WIDTH_PX=40;
 	public static final int LEFT_COLUMN_WIDTH_PX=200;
 	public static final String TAG="EXCEPTION";
-
+	
 	public void say(String str){
 		Toast.makeText(getActivity(), str, Toast.LENGTH_LONG).show();
 	}
