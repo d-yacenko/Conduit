@@ -96,6 +96,7 @@
     <string name="replica_save_error">ошибка записи реплики</string>
     <string name="replica_load_error">ошибка загрузка реплики</string>
     <string name="replica_file_not_specified">файл реплики не указан</string>
-    <string name="database_constraint_error">ошибка ограничений базы данных</string>
-    
+    <string name="database_constraint_error">нарушение ограничений БД</string>
+    <string name="students_required_fields_error">не заполнены обязательные объекта Студент</string>
+ 
 </resources>
