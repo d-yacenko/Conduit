@@ -1,137 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content" >
 
-    <TextView
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/automatic_periodical_replica"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:layout_height="wrap_content" >
 
-        <EditText
-            android:id="@+id/replica_server"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="2"
-            android:inputType="textUri"
-            android:ems="10" 
-            android:maxLines="1"
-            android:singleLine="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <ToggleButton
-            android:id="@+id/replica_server_turn"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:textOn="GAE"
-            android:textOff="GAE"
-             />
 
-    </LinearLayout>
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/replica_to_email"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/automatic_periodical_replica"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/replica_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:inputType="textEmailAddress"
-            android:layout_weight="2"
-            android:ems="10"
-            android:maxLines="1"
-            android:singleLine="true" />
+                    <EditText
+                        android:id="@+id/replica_server"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:inputType="textUri"
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
-        <ImageButton
-            android:id="@+id/replica_email_send"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:src="@drawable/ic_send_black_36dp"
-            android:text="@string/send" />
-    </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/replica_to_in_file"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+                    <ToggleButton
+                        android:id="@+id/replica_server_turn"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:textOff="GAE"
+                        android:textOn="GAE" />
+                </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/replica_to_email"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <EditText
-            android:id="@+id/replica_file"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="2"
-            android:ems="10"
-            android:maxLines="1"
-            android:singleLine="true" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
 
-        <ImageButton
-            android:id="@+id/replica_from_file"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:src="@drawable/ic_from_file_grey600_36dp"
-            android:text="@string/send" />
+                    <EditText
+                        android:id="@+id/replica_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
 
-        <ImageButton
-            android:id="@+id/replica_to_file"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:src="@drawable/ic_to_file_grey600_36dp"
-            android:text="@string/send" />
+                    <ImageButton
+                        android:id="@+id/replica_email_send"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:src="@drawable/ic_send_black_36dp"
+                        android:text="@string/send" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/replica_to_in_file"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/replica_file"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                    <ImageButton
+                        android:id="@+id/replica_from_file"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:src="@drawable/ic_from_file_grey600_36dp"
+                        android:text="@string/send" />
+
+                    <ImageButton
+                        android:id="@+id/replica_to_file"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:src="@drawable/ic_to_file_grey600_36dp"
+                        android:text="@string/send" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report_to_email"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/report_email"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true" />
+
+                    <ImageButton
+                        android:id="@+id/report_email_send"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:src="@drawable/ic_send_black_36dp"
+                        android:text="@string/send" />
+                </LinearLayout>
         </LinearLayout>
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/report_to_email"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    </HorizontalScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <EditText
-            android:id="@+id/report_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:inputType="textEmailAddress"
-            android:layout_weight="2"
-            android:ems="10"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-        <ImageButton
-            android:id="@+id/report_email_send"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:src="@drawable/ic_send_black_36dp"
-            android:text="@string/send" />
-    </LinearLayout>
-    
-</LinearLayout>
+</ScrollView>
