@@ -1,172 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:fillViewport="true" >
 
-    <EditText
-        android:id="@+id/name"
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/name"
-        android:inputType="textPersonName|textCapSentences"
-        android:maxLines="1"
-        android:singleLine="true" >
-    </EditText>
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
 
-    <EditText
-        android:id="@+id/lastname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/lastname"
-        android:inputType="textPersonName|textCapSentences"
-        android:maxLines="1"
-        android:singleLine="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/surname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/surname"
-        android:inputType="textPersonName|textCapSentences"
-        android:maxLines="1"
-        android:singleLine="true" />
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/name"
+                android:inputType="textPersonName|textCapSentences"
+                android:maxLines="1"
+                android:singleLine="true" >
+            </EditText>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/lastname"
+                android:inputType="textPersonName|textCapSentences"
+                android:maxLines="1"
+                android:singleLine="true" />
 
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true" />
+            <EditText
+                android:id="@+id/surname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/surname"
+                android:inputType="textPersonName|textCapSentences"
+                android:maxLines="1"
+                android:singleLine="true" />
 
-        <ImageButton
-            android:id="@+id/sendEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_email_black_36dp" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/phone"
-            android:inputType="phone"
-            android:maxLines="1"
-            android:singleLine="true" />
-        <ImageButton
-            android:id="@+id/callPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_phone_black_36dp" />
-        
-        <ImageButton
-            android:id="@+id/sendSms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_message_draw_black_36dp" />
-    </LinearLayout>
+                <ImageButton
+                    android:id="@+id/sendEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_email_black_36dp" />
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/parentphone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/parentphone"
-            android:inputType="phone"
-            android:maxLines="1"
-            android:singleLine="true" />
-        <ImageButton
-            android:id="@+id/callParentPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_phone_black_36dp" />
-        
-        
-        <ImageButton
-            android:id="@+id/sendSmsParent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_message_draw_black_36dp" />
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/phone"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+                <ImageButton
+                    android:id="@+id/callPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone_black_36dp" />
 
-        <EditText
-            android:id="@+id/birthday"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="@string/birthday"
-            android:inputType="date"
-            android:maxLines="1"
-            android:singleLine="true" >
-        </EditText>
+                <ImageButton
+                    android:id="@+id/sendSms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_message_draw_black_36dp" />
+            </LinearLayout>
 
-        <EditText
-            android:id="@+id/numclass"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:ems="10"
-            android:hint="@string/numclass"
-            android:inputType="number"
-            android:maxLines="1"
-            android:singleLine="true" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-        <CheckBox
-            android:id="@+id/hidden"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hidden" />
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/parentphone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/parentphone"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
-    <ImageView
-        android:id="@+id/photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:src="@drawable/nobody" />
+                <ImageButton
+                    android:id="@+id/callParentPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone_black_36dp" />
 
-    <Button
-        android:id="@+id/edit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/edit" />
+                <ImageButton
+                    android:id="@+id/sendSmsParent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_message_draw_black_36dp" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/delete" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-</LinearLayout>
+                <EditText
+                    android:id="@+id/birthday"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:hint="@string/birthday"
+                    android:inputType="date"
+                    android:maxLines="1"
+                    android:singleLine="true" >
+                </EditText>
+
+                <EditText
+                    android:id="@+id/numclass"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:hint="@string/numclass"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+                <CheckBox
+                    android:id="@+id/hidden"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hidden" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/nobody" />
+
+            <Button
+                android:id="@+id/edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/delete" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</ScrollView>
