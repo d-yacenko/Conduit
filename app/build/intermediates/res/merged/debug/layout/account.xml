@@ -5,12 +5,6 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -45,5 +39,4 @@
             </ScrollView>
 
         </LinearLayout>
-    </HorizontalScrollView>
-</ScrollView><!-- From: file:/home/d.yacenko/work/java/Conduit1/app/src/main/res/layout/account.xml -->
+</ScrollView><!-- From: file:/opt/java/Conduit1/app/src/main/res/layout/account.xml -->
