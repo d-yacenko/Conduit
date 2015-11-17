@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- ДЕЙСТВИЯ (кнопки) -->
+    
+    <string name="add">добавить</string>
+    <string name="edit">изменить</string>
+    <string name="delete">удалить</string>
+    <string name="change">изменить</string>
+    <string name="set">установить</string>
+    <string name="send">отправить</string>
+    
+    <!-- ДЕЙСТВИЯ (название) -->
+    
+    <string name="add_record">добавить запись</string>
+    <string name="add_lesson">добавить урок</string>
+    <string name="re_type">повторите ввод</string>
+    <string name="update_record">обновить запись</string>
+    <string name="delete_record">удалить запись</string>
+    <string name="change_password">изменить пароль</string>
+    <string name="enter_password">введите пароль</string>
+    <string name="login_to_program">вход в программу</string>
+    <string name="add_another_password">ввести дополнительный пароль</string>
+    <string name="delete_one_password">удалить пароль</string>
+    <string name="set_replica">установить реплику</string>
+    <string name="password_added">пароль добавлен</string>
+    <string name="password_deleted">пароль удален</string>
+    <string name="password_changed">пароль изменен</string>
+    <string name="relogin_needed">необходимо войти заново</string>
+    
+    <!-- ПРЕДМЕТЫ и СВОЙСТВА (название) -->
+    
+    <string name="on">вкл</string>
+    <string name="off">выкл</string>
+        <string name="app_name">Журнал</string>
+    <string name="account">журнал</string>
+    <string name="student">ученик</string>
+    <string name="group_name">название группы</string>
+    <string name="GAE">GAE</string>
+    <string name="name">Имя</string>
+    <string name="lastname">Отчество</string>
+    <string name="surname">Фамилия</string>
+    <string name="n">отс.</string>
+    <string name="h">есть</string>
+    <string name="q">ув.п</string>
+    <string name="_n">н</string>
+    <string name="_h">✓</string>
+    <string name="_q">у</string>
+    <string name="email">EMail</string>
+    <string name="phone">телефон</string>
+    <string name="parentphone">телефон родителей</string>
+    <string name="birthday">день рождения</string>
+    <string name="numclass">класс</string>
+    <string name="hidden">скрытый</string>
+    <string name="subject">тема</string>
+    <string name="group">группа</string>
+    <string name="action_settings">settings</string>
+    <string name="city">город</string>
+    <string name="timetable">расписание</string>
+    <string name="teacher">преподаватель</string>
+    <string name="title">название</string>
+    <string name="additional">дополнительно</string>
+    <string name="list">список</string>
+    <string name="default_subject">IT School Samsung</string>
+    <string name="email_sending">отправка письма...</string>
+    <string name="critical_operation">критическая операция</string>
+    <string name="are_you_sure">вы уверены?</string>
+    <string name="text_about">Программа создана под лицензией LGPL\nАвтор: Дмитрий Владимирович Яценко\nd.yacenko@gmail.com\nsupervisor@itx.ru</string>
+    <string name="dont_press_back">не нажимайте back!</string>
+    <string name="date_format">ДД.ММ.ГГГГ</string>
+    <string name="login">вход</string>
+    <string name="login_first">первый вход</string>
+    <string name="replica_id">ID реплики</string>
+    <string name="all_number_of_security">количество установленных паролей</string>
+    <string name="all_number_of_student">количество введенных учеников</string>
+    <string name="all_number_of_group">количество введенных групп</string>
+    <string name="all_number_of_lesson">количество занятий в журнале</string>
+    <string name="replica_to_server">реплика на сервер</string>
+    <string name="replica_to_email">реплика на E-Mail</string>
+    <string name="replica_to_in_file">реплика в/из файла</string>
+    <string name="automatic_periodical_replica">автоматическая репликация на сервер</string>
+    <string name="report_to_email">отчет на E-Mail</string>
+    
+    <!-- ОШИБКИ -->
+
+    <string name="error_date">неверно введена дата</string>
+    <string name="send_fail">ошибка отправки</string>
+    <string name="call_fail">ошибка звонка</string>
+    <string name="cant_take_shot">невозможно сделать снимок</string>
+    <string name="error_key">ошибка пароля(8 символов?)</string>
+    <string name="cannot_delete_one_password">нельзя удалить единственный пароль</string>
+    <string name="differed_password">пароли отличаются</string>
+    <string name="enter_actual_password">актуальный пароль</string>
+    <string name="password_is_wrong">введен неверный пароль</string>
+    <string name="email_attach_error">не удалось прикрепить файл</string>
+    <string name="replica_save_error">ошибка записи реплики</string>
+    <string name="replica_load_error">ошибка загрузка реплики</string>
+    <string name="replica_file_not_specified">файл реплики не указан</string>
+    <string name="database_constraint_error">нарушение ограничений БД</string>
+    <string name="students_required_fields_error">не заполнены обязательные объекта Студент</string>
+ 
+</resources>
