@@ -68,4 +68,4 @@ public class Account {
 	public void setValue(String value) {
 		this.value = value;
 	}
-}
+ }
