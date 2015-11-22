@@ -44,7 +44,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 
 public class AccountFragment extends FragmentTools {
 	View view;
-	AddAccountRecordFragment frag;
+	//AddAccountRecordFragment frag;
 	List<Group> groups;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +55,8 @@ public class AccountFragment extends FragmentTools {
 		add_account_row.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				go2Fragment(new AddAccountRecordFragment());
+				((MainActivity)getActivity()).addAccountRecordFragment=new AddAccountRecordFragment();
+				go2Fragment(((MainActivity)getActivity()).addAccountRecordFragment);
 			}
 		});
 		groups = DataHelper.getDH().selectAll_group();
@@ -151,9 +152,9 @@ public class AccountFragment extends FragmentTools {
 			cellHeader.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					EditAccountRecordFragment editAccountRecordFragment = new EditAccountRecordFragment();
-					editAccountRecordFragment.setAccount(((AccountModel) v.getTag()));
-					go2Fragment(editAccountRecordFragment);
+					((MainActivity)getActivity()).editAccountRecordFragment = new EditAccountRecordFragment();
+					((MainActivity)getActivity()).editAccountRecordFragment.setAccount(((AccountModel) v.getTag()));
+					go2Fragment(((MainActivity)getActivity()).editAccountRecordFragment);
 				}
 			});
 			header.addView(cellHeader);

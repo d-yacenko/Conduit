@@ -28,8 +28,10 @@ import ru.itx.conduit.R.id;
 import ru.itx.conduit.R.layout;
 import ru.itx.conduit.R.string;
 import ru.itx.conduit.ui.Fragments.AccountFragment;
+import ru.itx.conduit.ui.Fragments.AddAccountRecordFragment;
 import ru.itx.conduit.ui.Fragments.AddGroupFragment;
 import ru.itx.conduit.ui.Fragments.AddStudentFragment;
+import ru.itx.conduit.ui.Fragments.EditAccountRecordFragment;
 import ru.itx.conduit.ui.Fragments.EditGroupFragment;
 import ru.itx.conduit.ui.Fragments.EditStudentFragment;
 import ru.itx.conduit.ui.Fragments.ExchangeFragment;
@@ -70,7 +72,10 @@ public class MainActivity extends Activity {
 	public HelpFragment helpFragment;
 	public SecurityFragment securityFragment;
 	public ExchangeFragment exchangeFragment;
+	public AddAccountRecordFragment addAccountRecordFragment;
+	public EditAccountRecordFragment editAccountRecordFragment;
 	public Fragment previousFragment;
+
 	private ASecurity security;
 	private DataHelper dh;
 
@@ -110,6 +115,12 @@ public class MainActivity extends Activity {
 					.get("addGroupFragment");
 			editGroupFragment = (EditGroupFragment) savedValues
 					.get("editGroupFragment");
+			groupFragment = (GroupFragment) savedValues.get("groupFragment");
+			helpFragment = (HelpFragment) savedValues.get("helpFragment");
+			securityFragment = (SecurityFragment) savedValues.get("securityFragment");
+			exchangeFragment = (ExchangeFragment) savedValues.get("exchangeFragment");
+			addAccountRecordFragment = (AddAccountRecordFragment) savedValues.get("addAccountRecordFragment");
+			editAccountRecordFragment= (EditAccountRecordFragment) savedValues.get("editAccountRecordFragment");
 		}
 	}
 
@@ -328,6 +339,13 @@ public class MainActivity extends Activity {
 		savedValues.put("editStudentFragment", editStudentFragment);
 		savedValues.put("addGroupFragment", addGroupFragment);
 		savedValues.put("editGroupFragment", editGroupFragment);
+		savedValues.put("groupFragment", groupFragment);
+		savedValues.put("helpFragment", helpFragment);
+		savedValues.put("exchangeFragment", exchangeFragment);
+		savedValues.put("securityFragment", securityFragment);
+		savedValues.put("addAccountRecordFragment", addAccountRecordFragment);
+		savedValues.put("editAccountRecordFragment", editAccountRecordFragment);
+
 		return savedValues;
 	}
 

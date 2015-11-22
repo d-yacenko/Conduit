@@ -5,4 +5,4 @@
    
 <solid android:color="@android:color/transparent"/>
 <stroke  android:width="2dip"/>
-</shape><!-- From: file:/home/d.yacenko/work/java/Conduit1/app/src/main/res/drawable-hdpi/custom_border.xml -->
+</shape><!-- From: file:/opt/java/Conduit1/app/src/main/res/drawable-hdpi/custom_border.xml -->
