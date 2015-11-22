@@ -89,10 +89,10 @@ public class ListGroupFragment extends FragmentTools {
 			}
 		});
 		TextView group=(TextView)view.findViewById(R.id.group);
-		group.setOnClickListener(new onСlickSendMailListener());		
+		group.setOnClickListener(new onClickSendMailListener());
 		ImageButton sendEmail_group = (ImageButton) view
 				.findViewById(R.id.sendEmail);
-		sendEmail_group.setOnClickListener(new onСlickSendMailListener());
+		sendEmail_group.setOnClickListener(new onClickSendMailListener());
 
 		ImageButton sendSms_group = (ImageButton)view.findViewById(R.id.sendSms);
 		sendSms_group.setOnClickListener(new OnClickListener() {
@@ -113,7 +113,7 @@ public class ListGroupFragment extends FragmentTools {
 
 
 	
-	class  onСlickSendMailListener implements OnClickListener{
+	class  onClickSendMailListener implements OnClickListener{
 		@Override
 		public void onClick(View v) {
 			List<String> addresses = new ArrayList<String>();
