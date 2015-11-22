@@ -1,4 +1,6 @@
 ## Java
+*.dex
+*.apk
 *.class
 *.war
 *.ear
