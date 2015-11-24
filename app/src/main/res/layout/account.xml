@@ -5,38 +5,50 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/add_lesson"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_lesson" />
+
+        <Spinner
+            android:id="@+id/group"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"></Spinner>
 
-            <Button
-                android:id="@+id/add_lesson"
-                android:layout_width="fill_parent"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F000" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TableLayout
+                android:id="@+id/account_table_names"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_lesson" />
+                android:stretchColumns="0"></TableLayout>
 
-            <Spinner
-                android:id="@+id/group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></Spinner>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#F000" />
-
-            <ScrollView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:fillViewport="true">
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TableLayout
-                    android:id="@+id/account_table"
-                    android:layout_width="match_parent"
+                    android:id="@+id/account_table_values"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:stretchColumns="0"></TableLayout>
-            </ScrollView>
-
+            </HorizontalScrollView>
         </LinearLayout>
+
+    </LinearLayout>
 </ScrollView>
