@@ -44,7 +44,7 @@ public class StudentFragment extends FragmentTools {
 		strs = new ArrayList<String>();
 		if (students != null)
 			for (Student s : students)
-				strs.add(s.getName() + " " + (s.getLastName()==null?"":s.getLastName()) + " " + s.getSurName());
+				strs.add(s.getFullName());
 
 		listView = (ListView) view.findViewById(R.id.list_student);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),

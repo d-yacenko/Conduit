@@ -126,7 +126,7 @@ public class AccountFragment extends FragmentTools {
 		// строим таблицу
 
 		TableRow.LayoutParams llp = new TableRow.LayoutParams(LEFT_COLUMN_WIDTH_PX,LayoutParams.WRAP_CONTENT,0.5f);
-		TableRow.LayoutParams llh = new TableRow.LayoutParams(0,LayoutParams.WRAP_CONTENT,1);
+		TableRow.LayoutParams llh = new TableRow.LayoutParams(COLUMN_WIDTH_PX,LayoutParams.WRAP_CONTENT,1);
 		// table.setStretchAllColumns(false);
 		table_names.setShrinkAllColumns(false);
 		table_values.setShrinkAllColumns(false);
@@ -138,6 +138,7 @@ public class AccountFragment extends FragmentTools {
 		cellLeftUp_names.setLayoutParams(llp);
 		header_names.addView(cellLeftUp_names);
 		header_names.addView(getVBorder());
+		header_names.setLayoutParams(llp);
 		table_names.addView(header_names);
 
 		TableRow header_values = new TableRow(getActivity());
@@ -150,7 +151,7 @@ public class AccountFragment extends FragmentTools {
 					R.color.lightgray));
 			cellHeader.setLines(3);
 			cellHeader.setMaxLines(3);
-//			cellHeader.setLayoutParams(llh);
+			cellHeader.setLayoutParams(llh);
 			cellHeader.setRotation(-90);
 			cellHeader.setClickable(true);
 			cellHeader.setTag(list.get(i));
@@ -173,8 +174,7 @@ public class AccountFragment extends FragmentTools {
 			j++;
 			TableRow row_names = new TableRow(getActivity());
 			TextView cellHeader = new TextView(getActivity());
-			cellHeader.setText(s.getName() + " " + (s.getLastName() == null ? "" : s.getLastName()) + " "
-					+ s.getSurName());
+			cellHeader.setText(s.getFullName());
 			cellHeader.setTypeface(Typeface.SERIF, Typeface.BOLD);
 			if(j%2==0)
 			cellHeader.setBackgroundColor(getResources().getColor(
@@ -198,6 +198,7 @@ public class AccountFragment extends FragmentTools {
 			});
 			row_names.addView(cellHeader);
 			row_names.addView(getVBorder());
+			row_names.setLayoutParams(llp);
 
 			TableRow row_values = new TableRow(getActivity());
 			for (int i = 0; i < list.size(); i++) {

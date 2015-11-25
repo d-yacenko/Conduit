@@ -81,11 +81,7 @@ public class AccountRecordArrayAdapter extends
 		}
 		view.setTag(Integer.valueOf(position));
 		
-		String name = model.getStudent().getName()
-				+ " "
-				+ (model.getStudent().getLastName() == null ? "" : model
-						.getStudent().getLastName()) + " "
-				+ model.getStudent().getSurName();
+		String name = model.getStudent().getFullName();
 		((TextView) view.findViewById(R.id.student)).setText(name);
 		String s = model.getValue();
 		if (!s.equals(view.getResources().getString(R.string._q))

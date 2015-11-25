@@ -402,8 +402,7 @@ public class ExchangeFragment extends FragmentTools {
 		for (Student s : students) {
 			j++;
 			rez[j]=new ArrayList<String>();
-			rez[j].add(s.getName() + " " + (s.getLastName()==null?"":s.getLastName()) + " "
-					+ s.getSurName());
+			rez[j].add(s.getFullName());
 
 			for (int i = 0; i < list.size(); i++) {
 				String rez1 = "";

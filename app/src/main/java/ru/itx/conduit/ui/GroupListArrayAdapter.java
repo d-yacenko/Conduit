@@ -43,11 +43,7 @@ public class GroupListArrayAdapter extends ArrayAdapter<RowGroupListModel> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = convertView;
 		RowGroupListModel model = list.get(position);
-		String name = model.getStudent().getName()
-				+ " "
-				+ (model.getStudent().getLastName() == null ? "" : model
-						.getStudent().getLastName()) + " "
-				+ model.getStudent().getSurName();
+		String name = model.getStudent().getFullName();
 		if (view == null) {
 			LayoutInflater inflator = context.getLayoutInflater();
 			view = inflator.inflate(R.layout.row_group_list, null);
