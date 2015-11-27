@@ -1,6 +1,7 @@
 package ru.itx.conduit.ui.Fragments;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +15,8 @@ import ru.itx.conduit.R.id;
 import ru.itx.conduit.R.layout;
 import ru.itx.conduit.ui.FragmentTools;
 import ru.itx.conduit.ui.MainActivity;
+import ru.itx.conduit.ui.VerticalTextView;
+
 import android.R.string;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -21,6 +24,7 @@ import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.Gravity;
@@ -109,6 +113,8 @@ public class AccountFragment extends FragmentTools {
 		TableLayout table_values = (TableLayout) view.findViewById(id.account_table_values);
 		table_names.removeAllViews();
 		table_values.removeAllViews();
+//		table_values.setStretchAllColumns(false);
+//		table_names.setStretchAllColumns(false);
 		if (list == null)
 			return;
 		// выбираем всех учащихся
@@ -118,7 +124,7 @@ public class AccountFragment extends FragmentTools {
 				if (!students.contains(r.getStudent())
 						&& !r.getStudent().isHidden())
 					students.add(r.getStudent());
-		//
+		Collections.sort(students);
 //		Display display = getActivity().getWindowManager().getDefaultDisplay();
 //		int width = display.getWidth();
 //		int maxNum = (width - LEFT_COLUMN_WIDTH_PX) / COLUMN_WIDTH_PX;
@@ -127,14 +133,13 @@ public class AccountFragment extends FragmentTools {
 
 		TableRow.LayoutParams llp = new TableRow.LayoutParams(LEFT_COLUMN_WIDTH_PX,LayoutParams.WRAP_CONTENT,0.5f);
 		TableRow.LayoutParams llh = new TableRow.LayoutParams(COLUMN_WIDTH_PX,LayoutParams.WRAP_CONTENT,1);
-		// table.setStretchAllColumns(false);
 		table_names.setShrinkAllColumns(false);
 		table_values.setShrinkAllColumns(false);
 		// фомируем шапку таблицы: поле (0,0)
 		TableRow header_names = new TableRow(getActivity());
 		TextView cellLeftUp_names = new TextView(getActivity());
-		cellLeftUp_names.setLines(3);
-		cellLeftUp_names.setMaxLines(3);
+		cellLeftUp_names.setLines(4);
+		cellLeftUp_names.setMaxLines(4);
 		cellLeftUp_names.setLayoutParams(llp);
 		header_names.addView(cellLeftUp_names);
 		header_names.addView(getVBorder());
@@ -143,16 +148,15 @@ public class AccountFragment extends FragmentTools {
 
 		TableRow header_values = new TableRow(getActivity());
 		for (int i = 0; i < list.size(); i++) {
-			TextView cellHeader = new TextView(getActivity());
-			cellHeader.setText(saySimple(new Date(list.get(i).date)) + "\n"
-					+ list.get(i).subject);
+			TextView cellHeader = new VerticalTextView(getActivity());
+			cellHeader.setText(saySimple(new Date(list.get(i).date)));
+			//cellHeader.setText(saySimple(new Date(list.get(i).date)) + "\n"
+					//		+ list.get(i).subject);
 			cellHeader.setTypeface(Typeface.SERIF, Typeface.BOLD);
 			cellHeader.setBackgroundColor(getResources().getColor(
 					R.color.lightgray));
-			cellHeader.setLines(3);
-			cellHeader.setMaxLines(3);
+			cellHeader.setLines(4);
 			cellHeader.setLayoutParams(llh);
-			cellHeader.setRotation(-90);
 			cellHeader.setClickable(true);
 			cellHeader.setTag(list.get(i));
 			cellHeader.setOnClickListener(new OnClickListener() {
@@ -171,7 +175,6 @@ public class AccountFragment extends FragmentTools {
 			// строим левый хидер
 		int j=0;
 		for (Student s : students) {
-			j++;
 			TableRow row_names = new TableRow(getActivity());
 			TextView cellHeader = new TextView(getActivity());
 			cellHeader.setText(s.getFullName());
@@ -222,6 +225,7 @@ public class AccountFragment extends FragmentTools {
 
 			table_names.addView(row_names);
 			table_values.addView(row_values);
+			j++;
 		}
 		List<TableRow> listRow = new ArrayList<TableRow>();
 	}

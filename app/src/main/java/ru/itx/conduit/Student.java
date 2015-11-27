@@ -159,7 +159,9 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student another) {
-        return name.compareTo(another.getName());
+        if (!Locale.getDefault().getCountry().equals("RU"))
+            return name.compareTo(another.getName());
+        else return surName.compareTo(another.getSurName());
     }
 
     public String getFullName() {
